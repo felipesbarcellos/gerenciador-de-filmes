@@ -10,12 +10,12 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
         self.filmes = []
-        self.create_table()
+        self.create_table(self)
         self.controller = ControllerFilmes(self)
         self.controller.atualizar_lista_filmes()
 
     #Create table
-    def create_table(self):
+    def create_table(self, frame):
         def delete_item(_):
             for i in self.table.selection():
                 self.table.delete(i)
@@ -23,8 +23,8 @@ class App(tk.Tk):
         def item_select(_):
             for i in self.table.selection():
                 print(self.table.item(i)['values'])
-                
-        self.table = ttk.Treeview(self, columns=('nome', 'assistido_em'), show='headings')
+
+        self.table = ttk.Treeview(frame, columns=('nome', 'assistido_em'), show='headings')
 
         self.table.heading('nome', text = 'Nome')
         self.table.heading('assistido_em', text='Assistido em')
