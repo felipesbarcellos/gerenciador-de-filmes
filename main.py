@@ -1,5 +1,5 @@
 from views.view import *
-from controllers.filmes_controller import ControllerFilmes
+from controllers.controller_filmes import ControllerFilmes
 from db import cria_db
 from models import *
 
