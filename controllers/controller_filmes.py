@@ -1,6 +1,6 @@
 from sqlalchemy import select
 from db import Session
-from models.Filme import Filme
+from models.filme import Filme
 
 
 class ControllerFilmes():
