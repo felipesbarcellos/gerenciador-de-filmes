@@ -1,16 +1,19 @@
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import DeclarativeBase
-
-class Base(DeclarativeBase):
-    ...
+from sqlalchemy import Column, DateTime, Integer, String
+from sqlalchemy.orm import relationship
+from datetime import datetime
+from db import Base
 
 class Filme(Base):
-    __tablename__ = "filmes"
+    __tablename__ = "filme"
 
-    id = Column('id', Integer, primary_key=True, autoincrement=True)
+    filme_id = Column('filme_id', Integer, primary_key=True, autoincrement=True)
     nome = Column('nome', String, nullable=False)
-    assistido_em = Column('assistido_em', String, nullable=True)
+    genero = Column('genero', String, nullable=False)
+    criado_em = Column('criado_em', DateTime, default=datetime.now)
 
-    def __init__(self, nome, assistido_em):
+    assistidos = relationship('Assistido', back_populates='filme')
+
+    def __init__(self, nome, assistido_em, genero):
         self.nome = nome
         self.assistido_em = assistido_em
+        self.genero = genero
