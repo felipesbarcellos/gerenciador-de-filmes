@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from controllers.filmes_controller import ControllerFilmes
+from controllers.controller_filmes import ControllerFilmes
 
 #data
 class App(tk.Tk):
