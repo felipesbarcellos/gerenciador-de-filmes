@@ -1,3 +1,3 @@
-from .Usuario import Usuario
-from .Assistido import Assistido
-from .Filme import Filme
+from .usuario import Usuario
+from .assistido import Assistido
+from .filme import Filme
