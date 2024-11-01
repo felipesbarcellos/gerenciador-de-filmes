@@ -1,4 +1,6 @@
 venv/
 *.pyc
 *.db
+Filmes.md
+*.csv
 miro.txt
