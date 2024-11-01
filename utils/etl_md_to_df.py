@@ -1,6 +1,5 @@
 from datetime import datetime
 import os
-from utils.constants import INPUT_ETL, OUTPUT_ETL
 from utils.debug import Debug
 from utils.time import Date
 import pandas as pd
@@ -17,7 +16,12 @@ class MD_to_DataFrame():
         self.linhas = self._get_linhas()
         self.df = self._linhas_para_dataframe()
         
-    def save_df(self, output_file):
+    def save_df(self, output_file: os.path):
+        """Save self.df to output_file specified
+
+        Args:
+            output_file (os.path): _description_
+        """
         self.df.to_csv(output_file)
 
     def _get_linhas(self, md_path: os.path):
